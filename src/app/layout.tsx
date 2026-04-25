@@ -12,7 +12,7 @@ const inter = Inter({
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "900"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-noto-sans-kr",
   display: "swap",
 });

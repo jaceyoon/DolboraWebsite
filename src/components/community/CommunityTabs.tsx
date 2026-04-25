@@ -35,13 +35,18 @@ export default function CommunityTabs() {
   return (
     <div>
       <div className="overflow-x-auto">
-        <div className="inline-flex min-w-full gap-2 border-b border-black/10 pb-px">
+        <div role="tablist" aria-label="Community sections" className="inline-flex min-w-full gap-2 border-b border-black/10 pb-px">
           {TABS.map((t) => {
             const isActive = active === t.id;
             return (
               <button
                 key={t.id}
                 type="button"
+                role="tab"
+                id={`tab-${t.id}`}
+                aria-selected={isActive}
+                aria-controls={`tabpanel-${t.id}`}
+                tabIndex={isActive ? 0 : -1}
                 onClick={() => setActive(t.id)}
                 className={`relative px-5 py-3 text-sm font-medium transition md:text-[15px] ${
                   isActive ? "text-brand" : "text-ink-muted hover:text-ink-soft"
@@ -65,6 +70,9 @@ export default function CommunityTabs() {
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
+            role="tabpanel"
+            id={`tabpanel-${active}`}
+            aria-labelledby={`tab-${active}`}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}

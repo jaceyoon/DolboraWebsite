@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 type FormState = {
   facilityName: string;
@@ -31,9 +31,14 @@ export default function ContactForm() {
     e.preventDefault();
     console.log("[DOLBORA] contact form submit:", data);
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
     setData(INITIAL);
   };
+
+  useEffect(() => {
+    if (!submitted) return;
+    const id = window.setTimeout(() => setSubmitted(false), 4000);
+    return () => window.clearTimeout(id);
+  }, [submitted]);
 
   return (
     <form

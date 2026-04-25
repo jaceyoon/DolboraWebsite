@@ -49,7 +49,7 @@ export default function PhilosophySection() {
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {PILLARS.map((p, i) => (
             <Reveal key={p.title} delay={0.05 * i}>
-              <article className="group relative h-full overflow-hidden rounded-3xl border border-black/5 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(14,92,74,0.35)] md:p-9">
+              <article className="relative h-full overflow-hidden rounded-3xl border border-black/5 bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(14,92,74,0.35)] md:p-9">
                 <div className="absolute right-7 top-7 font-display text-xs font-semibold tracking-[0.2em] text-accent-dark">
                   {p.label}
                 </div>

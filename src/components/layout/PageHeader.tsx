@@ -13,7 +13,7 @@ export default function PageHeader({
   description,
   align = "left",
 }: Props) {
-  const alignCls = align === "center" ? "text-center mx-auto" : "text-left";
+  const alignCls = align === "center" ? "text-center" : "text-left";
 
   return (
     <section className="relative overflow-hidden bg-brand-mist/40 pt-32 md:pt-40">

@@ -170,7 +170,7 @@ export default function SolutionPage() {
                     {p.items.map((it, i) => (
                       <li
                         key={it.title}
-                        className="group rounded-2xl bg-brand-mist/40 p-5 transition hover:bg-brand-mist md:p-6"
+                        className="rounded-2xl bg-brand-mist/40 p-5 transition hover:bg-brand-mist md:p-6"
                       >
                         <span className="font-display text-[11px] font-semibold tracking-[0.2em] text-accent-dark">
                           0{i + 1}
